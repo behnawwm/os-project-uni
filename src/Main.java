@@ -1,5 +1,6 @@
 
 import model.secretary.Secretary;
+import model.tailor.Firooz;
 import model.tailor.FiroozSon;
 import model.tailor.Tailor;
 
@@ -22,7 +23,10 @@ public class Main {
         // Tailor's data
         ArrayList<Tailor> tailors = new ArrayList<>(tailorsCount);
         for (int i = 0; i < tailorsCount; i++) {
-            tailors.add(new FiroozSon(tailorNamesData[i % tailorNamesData.length]));   //up to 9 distinct names
+            if (i == 0)
+                tailors.add(new Firooz());
+            else
+                tailors.add(new FiroozSon(tailorNamesData[i % tailorNamesData.length]));   //up to 9 distinct names
         }
 
         new Secretary(tailors).start();
