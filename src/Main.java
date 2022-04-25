@@ -17,7 +17,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter tailors count:");
-        int tailorsCount = scanner.nextInt();       //up to 9 names
+        int tailorsCount = scanner.nextInt();       //should be divisible to customer count
 
         // Tailor's data
         ArrayList<Tailor> tailors = new ArrayList<>(tailorsCount);

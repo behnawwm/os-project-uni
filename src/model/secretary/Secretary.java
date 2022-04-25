@@ -22,7 +22,7 @@ public class Secretary extends Thread {
     @Override
     public synchronized void run() {
         //get customer count and update customer product list
-        String filePath = "/home/behnam/IdeaProjects/OsProject1/src/sample_data/file.txt";  //todo make it relative path
+        String filePath = "./src/sample_data/file.txt";
         ArrayList<Customer> customers = readCustomersFromFile(filePath);
 
         for (int i = 0; i < customers.size(); i++) {
