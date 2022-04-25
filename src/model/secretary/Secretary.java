@@ -1,4 +1,11 @@
+package model.secretary;
 
+import model.customer.Customer;
+import model.order.Coat;
+import model.order.Order;
+import model.order.Pants;
+import model.order.Shirt;
+import model.tailor.Tailor;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -15,13 +22,13 @@ public class Secretary extends Thread {
     @Override
     public synchronized void run() {
         //get customer count and update customer product list
-        String filePath = "/home/behnam/IdeaProjects/OsProject1/src/file.txt";
+        String filePath = "/home/behnam/IdeaProjects/OsProject1/src/sample_data/file.txt";  //todo make it relative path
         ArrayList<Customer> customers = readCustomersFromFile(filePath);
 
         for (int i = 0; i < customers.size(); i++) {
             giveCustomerToTailor(customers.get(i), tailors.get(i % tailors.size()));
         }
-        System.out.println("Secretary completes his task.");
+        System.out.println("model.secretary.Secretary completes his task.");
 
         for (Tailor tailor : tailors) {
             tailor.start();

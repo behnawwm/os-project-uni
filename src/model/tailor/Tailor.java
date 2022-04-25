@@ -1,3 +1,10 @@
+package model.tailor;
+
+import model.customer.Customer;
+import model.order.Coat;
+import model.order.Order;
+import model.order.Pants;
+import model.order.Shirt;
 
 import java.util.ArrayList;
 
@@ -18,10 +25,10 @@ public abstract class Tailor extends Thread {
     @Override
     public synchronized void run() {
         try {
-            if (name.equals("Firooz"))
-                System.out.println("Haji Firooz gets orders.");
+            if (name.equals("model.tailor.Firooz"))
+                System.out.println("Haji model.tailor.Firooz gets orders.");
             else
-                System.out.println("Tailor " + name + " gets orders.");
+                System.out.println("model.tailor.Tailor " + name + " gets orders.");
 
             for (Customer customer : givenCustomers) {
                 for (Order order : customer.orders) {
@@ -37,17 +44,17 @@ public abstract class Tailor extends Thread {
                     }
                 }
 
-                if (name.equals("Firooz"))
-                    System.out.println("Haji Firooz prepares order of " + customer.name);
+                if (name.equals("model.tailor.Firooz"))
+                    System.out.println("Haji model.tailor.Firooz prepares order of " + customer.name);
                 else
-                    System.out.println("Tailor " + name + " Firooz prepares order of " + customer.name);
+                    System.out.println("model.tailor.Tailor " + name + " model.tailor.Firooz prepares order of " + customer.name);
 
                 customer.start();
             }
-            if (name.equals("Firooz"))
-                System.out.println("Haji Firooz completes his task");
+            if (name.equals("model.tailor.Firooz"))
+                System.out.println("Haji model.tailor.Firooz completes his task");
             else
-                System.out.println("Tailor " + name + " completes his task");
+                System.out.println("model.tailor.Tailor " + name + " completes his task");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

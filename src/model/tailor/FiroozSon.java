@@ -1,5 +1,6 @@
+package model.tailor;
 
-import java.util.List;
+import model.tailor.Tailor;
 
 class FiroozSon extends Tailor {
 

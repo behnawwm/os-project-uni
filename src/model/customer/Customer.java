@@ -1,3 +1,9 @@
+package model.customer;
+
+import model.order.Coat;
+import model.order.Order;
+import model.order.Pants;
+import model.order.Shirt;
 
 import java.util.List;
 
