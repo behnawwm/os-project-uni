@@ -25,8 +25,8 @@ public abstract class Tailor extends Thread {
     @Override
     public synchronized void run() {
         try {
-            if (name.equals("model.tailor.Firooz"))
-                System.out.println("Haji model.tailor.Firooz gets orders.");
+            if (name.equals("Firooz"))
+                System.out.println("Haji Firooz gets orders.");
             else
                 System.out.println("Tailor " + name + " gets orders.");
 
@@ -44,15 +44,15 @@ public abstract class Tailor extends Thread {
                     }
                 }
 
-                if (name.equals("model.tailor.Firooz"))
-                    System.out.println("Haji model.tailor.Firooz prepares order of " + customer.getCustomerName());
+                if (name.equals("Firooz"))
+                    System.out.println("Haji Firooz prepares order of " + customer.getCustomerName());
                 else
-                    System.out.println("Tailor " + name + " model.tailor.Firooz prepares order of " + customer.getCustomerName());
+                    System.out.println("Tailor " + name + " Firooz prepares order of " + customer.getCustomerName());
 
                 customer.start();
             }
-            if (name.equals("model.tailor.Firooz"))
-                System.out.println("Haji model.tailor.Firooz completes his task");
+            if (name.equals("Firooz"))
+                System.out.println("Haji Firooz completes his task");
             else
                 System.out.println("Tailor " + name + " completes his task");
         } catch (InterruptedException e) {

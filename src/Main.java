@@ -7,10 +7,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static sample_data.FiroozSonNames.tailorNamesData;
+
 public class Main {
 
     //predetermined names for Tailors
-    static String[] names = {"Ali", "Hasan", "Hosein", "Taghi", "Naghi", "Naser", "Kamal", "Mohammad", "Mojtaba"};
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
@@ -18,10 +19,10 @@ public class Main {
         System.out.println("Enter tailors count:");
         int tailorsCount = scanner.nextInt();       //up to 9 names
 
-        // model.tailor.Tailor's data
+        // Tailor's data
         ArrayList<Tailor> tailors = new ArrayList<>(tailorsCount);
         for (int i = 0; i < tailorsCount; i++) {
-            tailors.add(new FiroozSon(names[i % names.length]));   //up to 9 distinct names
+            tailors.add(new FiroozSon(tailorNamesData[i % tailorNamesData.length]));   //up to 9 distinct names
         }
 
         new Secretary(tailors).start();

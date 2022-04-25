@@ -4,7 +4,7 @@ import model.tailor.Tailor;
 
 public class Firooz extends Tailor {
     public Firooz() {
-        super("model.tailor.Firooz", 900, 850, 700);
+        super("Firooz", 900, 850, 700);
     }
 
 }

@@ -28,7 +28,7 @@ public class Secretary extends Thread {
         for (int i = 0; i < customers.size(); i++) {
             giveCustomerToTailor(customers.get(i), tailors.get(i % tailors.size()));
         }
-        System.out.println("model.secretary.Secretary completes his task.");
+        System.out.println("Secretary completes his task.");
 
         for (Tailor tailor : tailors) {
             tailor.start();
