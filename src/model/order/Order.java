@@ -1,4 +1,4 @@
 package model.order;
 
-public class Order {
+public abstract class Order {
 }
