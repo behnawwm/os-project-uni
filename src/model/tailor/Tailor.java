@@ -28,10 +28,10 @@ public abstract class Tailor extends Thread {
             if (name.equals("model.tailor.Firooz"))
                 System.out.println("Haji model.tailor.Firooz gets orders.");
             else
-                System.out.println("model.tailor.Tailor " + name + " gets orders.");
+                System.out.println("Tailor " + name + " gets orders.");
 
             for (Customer customer : givenCustomers) {
-                for (Order order : customer.orders) {
+                for (Order order : customer.getOrders()) {
                     if (order instanceof Coat) {
                         Thread.sleep(kotSpeed);
 
@@ -45,16 +45,16 @@ public abstract class Tailor extends Thread {
                 }
 
                 if (name.equals("model.tailor.Firooz"))
-                    System.out.println("Haji model.tailor.Firooz prepares order of " + customer.name);
+                    System.out.println("Haji model.tailor.Firooz prepares order of " + customer.getCustomerName());
                 else
-                    System.out.println("model.tailor.Tailor " + name + " model.tailor.Firooz prepares order of " + customer.name);
+                    System.out.println("Tailor " + name + " model.tailor.Firooz prepares order of " + customer.getCustomerName());
 
                 customer.start();
             }
             if (name.equals("model.tailor.Firooz"))
                 System.out.println("Haji model.tailor.Firooz completes his task");
             else
-                System.out.println("model.tailor.Tailor " + name + " completes his task");
+                System.out.println("Tailor " + name + " completes his task");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

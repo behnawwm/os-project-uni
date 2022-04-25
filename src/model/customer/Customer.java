@@ -8,8 +8,8 @@ import model.order.Shirt;
 import java.util.List;
 
 public class Customer extends Thread {
-    String name;
-    List<Order> orders;
+    private String customerName;
+    private List<Order> orders;
 
     private final int kotDressingSpeed = 500;
     private final int shalvarDressingSpeed = 400;
@@ -19,8 +19,24 @@ public class Customer extends Thread {
     private final int shalvarPrice = 23000;
     private final int kotPrice = 30000;
 
-    public Customer(String name, List<Order> orders) {
-        this.name = name;
+    public Customer(String customerName, List<Order> orders) {
+        this.customerName = customerName;
+        this.orders = orders;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
 
@@ -45,7 +61,7 @@ public class Customer extends Thread {
 
             }
 
-            System.out.println(name + " puts " + priceSum + " in dressing room and Exit.");
+            System.out.println(customerName + " puts " + priceSum + " in dressing room and Exit.");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
